@@ -2,8 +2,10 @@
 // What data should look like
 
 'use strict';
+// Bring in Mongoose
 const mongoose = require('mongoose');
 // require('dotenv').config();
+// extract Schema property from the mongoose object
 const { Schema } = mongoose;
 
 mongoose.connect(process.env.DB_URL);

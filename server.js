@@ -13,7 +13,13 @@ app.use(express.json());
 mongoose.connect(process.env.DB_URL);
 
 // add validation to confirm we are wired up to our mongoDB
+/* This code is establishing a connection to the MongoDB database using Mongoose. It creates a constant
+`db` that represents the connection to the database. The `db.on` method listens for any errors that
+occur during the connection process and logs them to the console. The `db.once` method listens for
+the initial connection to the database and logs a message to the console indicating that the
+connection has been established. */
 const db = mongoose.connection;
+console.log('this is the mongoose!!!!!!!!!!!!')
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
   console.log('Mongoose is connected');
